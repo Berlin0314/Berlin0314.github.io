@@ -166,6 +166,37 @@
             color: #111;
             background: linear-gradient(to right, #88c1d0, #ffb6c1);
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #111;
+            padding: 20px;
+            border: 2px solid #0ff;
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .close-modal {
+            background-color: #111;
+            color: #0ff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .close-modal:hover {
+            background-color: #0ff;
+            color: #000;
+        }
     </style>
 </head>
 <body>
@@ -182,6 +213,11 @@
     </form>
 
     <div id="responseMessage"></div>
+
+    <div class="modal" id="modal">
+        <p id="modalMessage"></p>
+        <button class="close-modal" id="closeModal">Close</button>
+    </div>
 
     <script>
         // Function to create shooting stars
@@ -200,24 +236,25 @@
             e.preventDefault();
             const discordId = document.getElementById('discordId').value;
             const code = document.getElementById('code').value;
-            
+
             try {
                 const response = await fetch('http://51.222.80.21:20697/redeem', { // Use your actual server URL
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ discord_id: discordId, code })
                 });
-                
+
                 const result = await response.text();
                 document.getElementById('responseMessage').innerText = result;
+
+                // Show modal with result
+                document.getElementById('modalMessage').innerText = result;
+                document.getElementById('modal').classList.add('active');
             } catch (error) {
                 document.getElementById('responseMessage').innerText = 'An error occurred: ' + error.message;
-            }
-        });
-    </script>
-</body>
-</html>
 
-
+                // Show modal with error message
+                document.getElementById('modalMessage').innerText = 'An error occurred: ' + error.message;
+                document.getElementById('modal').classList.add
 
 
