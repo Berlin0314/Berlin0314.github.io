@@ -1,0 +1,304 @@
+Thank you for your patience! Let's complete the enhancements to make your website really pop. 
+
+### Complete Enhanced HTML and CSS
+
+Here's the fully enhanced version with numerous visual updates:
+
+**HTML and CSS**:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vortex Services - Redeem Code</title>
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
+            background-size: 600% 600%;
+            animation: gradient 15s ease infinite;
+            color: #0ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            color: #ff00cc;
+            text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+            animation: glow-text 1.5s infinite alternate;
+        }
+
+        @keyframes glow-text {
+            from {
+                text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+            }
+            to {
+                text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc, 0 0 80px #00ffcc;
+            }
+        }
+
+        .logo {
+            font-size: 4em;
+            color: #ff00cc;
+            font-weight: bold;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc, 0 0 40px #ff00cc, 0 0 50px #ff00cc, 0 0 60px #ff00cc, 0 0 70px #ff00cc;
+            }
+            to {
+                text-shadow: 0 0 20px #ff00cc, 0 0 30px #ff00cc, 0 0 40px #ff00cc, 0 0 50px #ff00cc, 0 0 60px #ff00cc, 0 0 70px #ff00cc, 0 0 80px #ff00cc;
+            }
+        }
+
+        label {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 1.5em;
+            position: relative;
+            color: #0ff;
+            text-shadow: 0 0 3px #0ff, 0 0 5px #0ff, 0 0 10px #0ff;
+        }
+
+        label .tooltip {
+            position: absolute;
+            top: 50%;
+            left: 110%;
+            transform: translateY(-50%);
+            width: 200px;
+            padding: 10px;
+            background-color: #111;
+            color: #ff00cc;
+            border: 1px solid #ff00cc;
+            border-radius: 5px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 1em;
+            z-index: 1;
+        }
+
+        label .tooltip::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            transform: translateY(-50%);
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent #111 transparent transparent;
+        }
+
+        label:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            margin-top: 5px;
+            border: 2px solid #ff00cc;
+            background-color: #111;
+            color: #0ff;
+            font-size: 1.2em;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ff00cc;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #111;
+            color: #ff00cc;
+            font-size: 1.2em;
+            border: 2px solid #ff00cc;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 8px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff00cc;
+            color: #000;
+            box-shadow: 0 0 10px #ff00cc;
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #0ff;
+            box-shadow: 0 0 6px 6px #0ff;
+            border-radius: 50%;
+            animation: shooting 1s linear infinite;
+        }
+
+        @keyframes shooting {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(100vw, -100vh);
+                opacity: 0;
+            }
+        }
+
+        #responseMessage {
+            margin-top: 20px;
+            font-size: 1.2em;
+            background-color: #111;
+            padding: 10px;
+            border: 2px solid #ff00cc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ff00cc;
+            color: #ff00cc;
+            text-shadow: 0 0 3px #ff00cc;
+        }
+
+        .neon-border {
+            border: 3px solid;
+            border-image-slice: 1;
+            border-width: 4px;
+            border-image-source: linear-gradient(92.88deg, #88c1d0 0%, #ffb6c1 100%);
+            box-shadow: 0 0 10px #ff00cc;
+            border-radius: 8px;
+        }
+
+        .neon-button {
+            padding: 12px 24px;
+            color: #ffb6c1;
+            background: #111;
+            border: 2px solid;
+            border-image: linear-gradient(to right, #88c1d0, #ffb6c1);
+            border-image-slice: 1;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 8px;
+        }
+
+        .neon-button:hover {
+            color: #111;
+            background: linear-gradient(to right, #88c1d0, #ffb6c1);
+            box-shadow: 0 0 10px #ff00cc;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #111;
+            padding: 20px;
+            border: 2px solid #ff00cc;
+            border-radius: 5px;
+            z-index: 2;
+            box-shadow: 0 0 10px #ff00cc;
+            color: #ff00cc;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .close-modal {
+            background-color: #111;
+            color: #ff00cc;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 8px;
+        }
+
+        .close-modal:hover {
+            background-color: #ff00cc;
+            color: #000;
+            box-shadow: 0 0 10px #ff00cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">Vortex Services</div>
+    <h1>Redeem Your Code</h1>
+    <form id="redeemForm">
+        <label for="discordId">Discord ID:
+            <span class="tooltip">Right-click your username in Discord and select "Copy ID" to get your Discord ID.</span>
+        </label>
+        <input type="text" id="discordId" name="discordId" class="neon-border"><br><br>
+        <label for="code">Code:</label>
+        <input type="text" id="code" name="code" class="neon-border"><br><br>
+        <input type="submit" value="Redeem" class="neon-button">
+    </form>
+
+    <div id="responseMessage"></div>
+
+    <div class="modal" id="modal">
+        <p id="modalMessage"></p>
+        <button class="close-modal" id="closeModal">Close</button>
+    </div>
+
+    <script>
+        // Function to create shooting stars
+        function createShootingStar() {
+            const star = document.createElement('div');
+            star.classList.add('shooting-star');
+            star.style.top = `${Math.random() * 100}vh`;
+            document.body.appendChild(star);
+            setTimeout(() => star.remove(), 1000);
+        }
+
+        // Create multiple shooting stars
+        setInterval(createShootingStar, 500);
+
+        document.getElementById('redeemForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const discordId = document.getElementById('discordId').value;
+            const code = document.getElementById('code').value;
+
+            try {
+                const response = await fetch('http://51.222.80.21:20697/redeem', { // Use your actual server URL
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ discord_id: discordId, code })
+                });
+
+                const result = await response.text();
+                document.getElementById('responseMessage').innerText = result;
+
+                // Show modal with result
+                document.getElementById('modalMessage').innerText = result;
+                document.getElementById('modal').classList.add('active');
+            } catch (error) {
+                document.getElementById('responseMessage').innerText = 'An error occurred: ' + error.message;
+
+                // Show modal with error message
+                document.getElementById('modalMessage').innerText = 'An error occurred: ' + error.message;
+                document.getElementById('modal').classList.add('active');
+            }
+        });
+
+        document.getElementById('closeModal').addEventListener('click', () => {
+            document.getElementById('modal').classList.remove('active');
+        });
+    </script>
+</body>
+</html>
