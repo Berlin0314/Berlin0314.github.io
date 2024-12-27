@@ -177,7 +177,7 @@
             const code = document.getElementById('code').value;
             
             try {
-                const response = await fetch('http://localhost:3000/redeem', {
+                const response = await fetch('http://51.222.80.21:20697/redeem', { // Use your actual KataBump bot URL
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ discord_id: discordId, code })
@@ -192,4 +192,6 @@
     </script>
 </body>
 </html>
+
+
 
