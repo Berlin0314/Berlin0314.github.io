@@ -55,8 +55,9 @@
 
         label .tooltip {
             position: absolute;
-            top: -5px;
-            left: 105%;
+            top: 50%;
+            left: 110%;
+            transform: translateY(-50%);
             width: 200px;
             padding: 10px;
             background-color: #111;
@@ -75,6 +76,7 @@
             position: absolute;
             top: 50%;
             right: 100%;
+            transform: translateY(-50%);
             margin-top: -5px;
             border-width: 5px;
             border-style: solid;
@@ -141,6 +143,29 @@
             border: 2px solid #0ff;
             border-radius: 5px;
         }
+
+        .neon-border {
+            border: 3px solid;
+            border-image-slice: 1;
+            border-width: 4px;
+            border-image-source: linear-gradient(92.88deg, #88c1d0 0%, #ffb6c1 100%);
+        }
+
+        .neon-button {
+            padding: 10px 20px;
+            color: #ffb6c1;
+            background: #111;
+            border: 2px solid;
+            border-image: linear-gradient(to right, #88c1d0, #ffb6c1);
+            border-image-slice: 1;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .neon-button:hover {
+            color: #111;
+            background: linear-gradient(to right, #88c1d0, #ffb6c1);
+        }
     </style>
 </head>
 <body>
@@ -150,10 +175,10 @@
         <label for="discordId">Discord ID:
             <span class="tooltip">Right-click your username in Discord and select "Copy ID" to get your Discord ID.</span>
         </label>
-        <input type="text" id="discordId" name="discordId"><br><br>
+        <input type="text" id="discordId" name="discordId" class="neon-border"><br><br>
         <label for="code">Code:</label>
-        <input type="text" id="code" name="code"><br><br>
-        <input type="submit" value="Redeem">
+        <input type="text" id="code" name="code" class="neon-border"><br><br>
+        <input type="submit" value="Redeem" class="neon-button">
     </form>
 
     <div id="responseMessage"></div>
@@ -177,7 +202,7 @@
             const code = document.getElementById('code').value;
             
             try {
-                const response = await fetch('http://51.222.80.21/redeem', { // Use your actual KataBump bot URL
+                const response = await fetch('http://51.222.80.21/redeem', { // Use your actual server URL
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ discord_id: discordId, code })
@@ -192,6 +217,7 @@
     </script>
 </body>
 </html>
+
 
 
 
